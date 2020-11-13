@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+      <div class="card my-4" style="width: 40rem;">
+       <h1>My articles</h1>
+        <%= link_to "Create new article", new_article_path %>
+        <% @articles.each do |article| %>
+        <div class="card-body rounded border border-light">
+          <h5 class="card-title"><%= article.title %></h5>
+          <p class="card-text"><%= article.description %></p>
+          <%= link_to "View", article_path(article), class: "btn btn-primary", "role" => "button" %>
+          <%= link_to "Update", edit_article_path(article), class: "btn btn-primary", "role" => "button" %>
+          <%= link_to "Delete", article_path(article), method: :delete, class: "btn btn-danger", "role" => "button"  %>
+        </div>
+        <% end %>
+      </div>
+</div>
+
+
+
